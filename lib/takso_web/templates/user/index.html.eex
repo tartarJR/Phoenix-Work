@@ -1,5 +1,9 @@
 <h2>Listing users</h2>
 
+<h3>
+  Users <%= link "+", to: "/users/new", class: "btn btn-success" %>
+</h3>
+
 <table class="table">
   <thead>
     <tr>
