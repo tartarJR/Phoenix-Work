@@ -8,4 +8,11 @@ defmodule TaksoWeb.UserController do
     users = Repo.all(User)
     render(conn, "index.html", users: users)
   end
+
+  def new(conn, _params) do
+    changeset = User.changeset(%User{})
+    render(conn, "new.html", changeset: changeset)
+  end
+
+
 end
