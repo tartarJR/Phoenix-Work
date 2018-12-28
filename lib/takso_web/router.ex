@@ -18,7 +18,9 @@ defmodule TaksoWeb.Router do
 
     get "/", PageController, :index
 
-    resources "/users", UserController
+    get "/users", UserController, :index
+    get "/users/new", UserController, :new
+    post "/users", UserController, :create
   end
 
   # Other scopes may use custom stacks.
