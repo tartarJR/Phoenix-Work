@@ -49,8 +49,13 @@ defmodule TaksoWeb.UserController do
         |> put_flash(:info, "User updated successfully.")
         |> redirect(to: Routes.user_path(conn, :index))
       {:error, changeset} ->
-        render(conn, "edit.html",  user: user, changeset: changeset)
+        render(conn, "edit.html", user: user, changeset: changeset)
     end
+  end
+
+  def show(conn, %{"id" => id}) do
+    user = Repo.get!(User, id)
+    render(conn, "show.html", user: user)
   end
 
 end
