@@ -25,7 +25,7 @@ defmodule TaksoWeb.Router do
     post "/users", UserController, :create
     get "/users/:id/show", UserController, :show
     get "/users/:id/edit", UserController, :edit
-    patch "/users/:id", UserController, :update
+    put "/users/:id", UserController, :update
     delete "/users/:id", UserController, :delete
   end
 
