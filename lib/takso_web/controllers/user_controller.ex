@@ -25,8 +25,8 @@ defmodule TaksoWeb.UserController do
         conn
         |> put_flash(:info, "User created successfully.")
         |> redirect(to: Routes.user_path(conn, :index))
-      {:error, changeset} ->
-        render(conn, "new.html", changeset: changeset)
+
+      {:error, changeset} -> render(conn, "new.html", changeset: changeset)
     end
   end
 
@@ -48,14 +48,23 @@ defmodule TaksoWeb.UserController do
         conn
         |> put_flash(:info, "User updated successfully.")
         |> redirect(to: Routes.user_path(conn, :index))
-      {:error, changeset} ->
-        render(conn, "edit.html", user: user, changeset: changeset)
+
+      {:error, changeset} -> render(conn, "edit.html", user: user, changeset: changeset)
     end
   end
 
   def show(conn, %{"id" => id}) do
     user = Repo.get!(User, id)
     render(conn, "show.html", user: user)
+  end
+
+  def delete(conn, %{"id" => id}) do
+    user = Repo.get!(User, id)
+    Repo.delete!(user)
+
+    conn
+    |> put_flash(:info, "User deleted successfully.")
+    |> redirect(to: Routes.user_path(conn, :index))
   end
 
 end
