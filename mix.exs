@@ -44,7 +44,8 @@ defmodule Takso.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:white_bread, "~> 4.3", only: [:test]}
+      {:white_bread, "~> 4.3", only: [:test]},
+      {:hound, "~> 1.0"}
     ]
   end
 
