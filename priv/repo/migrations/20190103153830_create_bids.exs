@@ -6,6 +6,7 @@ defmodule Takso.Repo.Migrations.CreateBids do
       add :bid_amount, :float
       add :user_name, :string
       add :bid_date, :date
+      add :item_id, references(:items, on_delete: :nothing)
 
       timestamps()
     end

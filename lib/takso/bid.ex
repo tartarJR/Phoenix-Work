@@ -15,7 +15,7 @@ defmodule Takso.Bid do
   @doc false
   def changeset(bid, attrs) do
     bid
-    |> cast(attrs, [:bid_amount, :user_name, :bid_date])
-    |> validate_required([:bid_amount, :user_name, :bid_date])
+    |> cast(attrs, [:bid_amount, :user_name, :bid_date, :item_id])
+    |> validate_required([:bid_amount, :user_name, :bid_date, :item_id])
   end
 end
