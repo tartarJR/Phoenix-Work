@@ -38,9 +38,9 @@ defmodule TaksoWeb.Router do
   scope "/api", TaksoWeb do
     pipe_through :api
 
-    get "/items", ItemAPIController, :summary
-    post "/items", ItemAPIController, :create
-    post "/bids", ItemAPIController, :bids
+    get "/items", BidController, :summary
+    post "/items", BidController, :create
+    post "/bids", BidController, :bids
   end
 
 end
