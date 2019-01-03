@@ -33,4 +33,14 @@ defmodule TaksoWeb.Router do
   # scope "/api", TaksoWeb do
   #   pipe_through :api
   # end
+
+  # Other scopes may use custom stacks.
+  scope "/api", TaksoWeb do
+    pipe_through :api
+
+    get "/items", ItemAPIController, :summary
+    post "/items", ItemAPIController, :create
+    post "/bids", ItemAPIController, :bids
+  end
+
 end
