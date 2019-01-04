@@ -55,7 +55,7 @@ defmodule TaksoWeb.BidController do
       %{
         id: bidding.id,
         date: bidding.bid_date,
-        amount: bidding.float_bid_amount,
+        amount: bidding.bid_amount,
         user: bidding.user_name
       }
     end)
