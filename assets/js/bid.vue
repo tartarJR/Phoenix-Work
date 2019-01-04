@@ -69,7 +69,7 @@ export default {
                     .then(response => {
                         this.response = response.data.msg
                     }).then((response) => {
-                        getBids()
+                        this.getBids()
                     }).catch(error => {
                         console.log(error);
                     });
@@ -88,7 +88,7 @@ export default {
 
     mounted: function() {
       this.item = this.$route.params;
-      getBids()
+      this.getBids()
     }
 }
 
